@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>资讯</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css" />
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+	</head>
+	<body class="gz-bg">
+		<div id="slider" class="mui-slider"></div>
+		<script id='newsadv-template' type="text/template">
+			<div class="mui-slider-group mui-slider-loop" id="newsadv-list">
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="<%=(first.img_url)%>">
+						<p class="mui-slider-title">
+							<%=(first.title)%>
+						</p>
+					</a>
+				</div>
+				<% for(var i in data){ var item = data[i]; %>
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="<%=(item.img_url)%>">
+						<p class="mui-slider-title">
+							<%=(item.title)%>
+						</p>
+					</a>
+				</div>
+				<% } %>
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="<%=(end.img_url)%>">
+						<p class="mui-slider-title">
+							<%=(end.title)%>
+						</p>
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<% for(var i = 0; i < len; i++){ %>
+				<div class="mui-indicator"></div>
+				<% } %>
+			</div>
+		</script>
+
+		<div class="gz-news-box">
+			<h3>
+            <i class="iconfont icon-icon-test6"></i>
+            <span lang>资讯列表</span>
+        </h3>
+			<ul id="newslist"></ul>
+			<script id='newslist-template' type="text/template">
+				<% for(var i in newslist){ var newsitem = newslist[i]; %>
+				<li id="<%=(newsitem.id)%>">
+					<div class="gz-news-title">
+						<span><%= (newsitem.title)%></span>
+						<samp><%=(newsitem.nfrom)%></samp>
+					</div>
+					<div class="gz-news-img">
+						<img src="<%=(newsitem.img_url)%>" />
+					</div>
+				</li>
+				<% } %>
+			</script>
+		</div>
+
+		<script src="config.js"></script>
+		<script src="../static/font/iconfont.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="lang/news.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/pages.js"></script>
+		<script src="js/news.js"></script>
+	</body>
+
+</html>

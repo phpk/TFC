@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>创建钱包</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css">
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+		<!--style>
+			.mui-plus header.mui-bar {
+				display: none!important;
+			}
+			
+			.mui-plus .mui-bar-nav~.mui-content {
+				padding: 0!important;
+			}
+			
+			.mui-plus .plus {
+				display: inline;
+			}
+			
+			.plus {
+				display: none;
+			}
+			
+			.gz-header-title {
+				color: #0e6acd
+			}
+			
+			#topPopover {
+				position: fixed;
+				top: 16px;
+				right: 6px;
+			}
+			
+			#topPopover .mui-popover-arrow {
+				left: auto;
+				right: 6px;
+			}
+			
+			p {
+				text-indent: 22px;
+			}
+			
+			span.mui-icon {
+				font-size: 14px;
+				color: #007aff;
+				margin-left: -15px;
+				padding-right: 10px;
+			}
+			
+			.mui-popover {
+				height: 140px;
+				width: 150px;
+				text-align: center;
+			}
+			
+			.mui-content {
+				padding: 10px;
+			}
+		</style-->
+	</head>
+
+	<body>
+		<div class="gz-header">
+			<div class="gz-header-back"><i class="iconfont icon-c mui-action-back"></i></div>
+			<div class="gz-header-title" lang>创建钱包</div>
+			<!--a class="gz-header-title" href="#topPopover"><span id="title">以太坊</span> <i class="iconfont icon-e"></i></a-->
+			<div class="gz-header-right"></div>
+		</div>
+		<!--div id="topPopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view" id="titlelist">
+						<li class="mui-table-view-cell">
+							<a href="#" id="eth">以太坊</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#" id="btc">比特币</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="#" id="eos">柚子</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div-->
+		<div class="gz-main">
+			<div class="gz-qianbaoadd-from">
+				<div class="gz-qianbaoadd-inp">
+					<input type="text" placeholder="请输入钱包名称"  name="name" id="name" lang />
+
+				</div>
+				<div class="gz-qianbaoadd-text">
+					<span lang>请牢记助记词：</span>
+					<textarea placeholder="请输入并牢记助记词" readonly="" id="word" lang></textarea>
+				</div>
+				<div class="gz-qianbaoadd-inp">
+					<input type="password" placeholder="请输入8-16位密码" id="pwd1" lang />
+					<i class="iconfont icon-icon-test12" id="eye1"></i>
+				</div>
+				<div class="gz-qianbaoadd-inp">
+					<input type="password" placeholder="确认密码" id="pwd2" lang />
+					<i class="iconfont icon-icon-test12" id="eye2"></i>
+				</div>
+			</div>
+			<div class="gz-but-box">
+				<div class="gz-but" id="sub" lang>确定</div>
+				<!--备用-->
+				<!--<div class="gz-but-disabled">确定</div>-->
+			</div>
+			<div class="gz-qianbaoadd-p" lang>请牢记助记词和钱包密码，一旦丢失，后果自负！创建 成功后务必备份好钱包私钥。本司承诺：个人钱包私钥和密码绝不上传服务器。</div>
+
+		</div>
+
+		<script src="../static/js/mui.min.js"></script>
+		
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		<script src="lang/create.js"></script>
+		
+		<script src="js/create.js"></script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="static/js/mui.min.js"></script>
+		<script src="static/js/common.js"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript" charset="utf-8">
+			var wallet = localStorage.getItem('mywalleteth');
+
+			if(!wallet) {
+				location.href = 'app/createguide.html';
+			} else {
+				location.href = 'app/main.html';
+			}
+			mui.plusReady(function() {
+				var defaultLan = localStorage.getItem('defaultLan');
+				
+				if(!defaultLan) {
+					if(plus.os.language.indexOf('zh') === -1) {
+						localStorage.setItem('defaultLan', 'en');
+					} else {
+						localStorage.setItem('defaultLan', 'zh');
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

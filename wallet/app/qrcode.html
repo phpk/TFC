@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>收款</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css">
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+		<link rel="stylesheet" href="../static/css/pop.css" />
+	</head>
+
+	<body>
+		<div class="gz-header">
+			<div class="gz-header-back"><i class="iconfont icon-c mui-action-back"></i></div>
+			<a class="gz-header-title" id="header" href="#topPopover"><span id="title">ETH</span> <font lang>收款</font> <i class="iconfont icon-e"></i></a>
+			<div class="gz-header-right">
+				<!--span>分享</span-->
+			</div>
+		</div>
+		<div id="topPopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view" id="list"></ul>
+				</div>
+			</div>
+
+		</div>
+		<script id='tpl' type="text/template">
+			<% for(var i in data){ var item = data[i]; %>
+			<li class="mui-table-view-cell" id="<%=(i)%>">
+				<%=(item.name)%>
+			</li>
+			<% } %>
+		</script>
+		
+		<div class="gz-payment-box">
+			<div class="gz-payment">
+				<div class="gz-twowm">
+					<h3 lang>扫一扫，向我付款</h3>
+					<div class="qr" id="qr"></div>
+					<h3 id="save_qrcode" lang>保存二维码</h3>
+				</div>
+				<div class="mui-content" id="out">
+			<!--div class="mui-content-padded" style="text-align: center;margin: 20px 0;">
+				<span class="mui-btn" id="me">
+					原生
+				</span>
+				<span class="mui-btn mui-btn-primary" id="imtoken">
+					imToken
+				</span>
+				<span class="mui-btn mui-btn-warning" id="metamask">
+					MetaMask
+				</span>
+			</div-->
+		</div>
+				<div class="gz-payment-copy">
+					<span lang>复制钱包地址</span>
+					<samp id="addr"></samp>
+				</div>
+			</div>
+
+		</div>
+		
+		<script src="config.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="lang/qrcode.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/qrcode.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/btc.js"></script>
+		<script src="../static/js/clipboard.min.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		
+		
+		<script src="js/qrcode.js"></script>
+	</body>
+
+</html>

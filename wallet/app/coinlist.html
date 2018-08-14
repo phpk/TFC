@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>资产管理</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css" />
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+	</head>
+
+	<body class="gz-bg">
+		<div class="gz-header">
+			<div class="gz-header-back"><i class="iconfont icon-c mui-action-back"></i></div>
+			<div class="gz-header-title" lang>币种管理</div>
+			<div class="gz-header-right"></div>
+		</div>
+		<div class="gz-main">
+			<div class="gz-all-tab">
+				<span class="gz-all-tab-checked" id="main"><samp lang>主币</samp></span>
+				<span id="eth"><samp lang>ETH代币</samp></span>
+				<span id="btc"><samp lang>BTC代币</samp></span>
+			</div>
+			<!--div class="gz-select-box">
+				<div class="gz-select">
+					<i class="iconfont icon-k"></i>
+					<input type="search" placeholder="简称/Token地址" />
+				</div>
+			</div-->
+			<div class="gz-qianbao-list" style="margin-top: 0">
+				<div class="gz-select-box">
+					<span><input type="search" id="select" placeholder="请输入要搜索的币种名称" lang /></span>
+					<samp><button id="selectbut" lang>搜索</button></samp>
+					
+				</div>
+				<ul id="mainarea"></ul>
+				<ul id="etharea" style="display: none;"></ul>
+				<ul id="btcarea" style="display: none;"></ul>
+				<script id='tpl' type="text/template">
+					<% for(var i in data){ var item = data[i]; %>
+					<li>
+						<div class="gz-qianbao-list-img"><img src="../static/coin/<%=(item.logo)%>" /></div>
+						<div class="gz-zican-list-text">
+							<span style="line-height:3rem;height:3rem;overflow: hidden;"><%=(item.coinname)%></span>
+							<samp><%=(item.name)%></samp>
+						</div>
+						<div class="gz-zican-list-but">
+							<span></span>
+							<div id="<%=(i)%>" class="mui-switch mui-switch-mini <%=(item['selected'] == 1 ? 'mui-active' : '')%>">
+								<div class="mui-switch-handle"></div>
+							</div>
+						</div>
+					</li>
+
+					<% } %>
+				</script>
+			</div>
+
+		</div>
+		<script src="config.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="lang/coinlist.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="../static/font/iconfont.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/clipboard.min.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		<script src="js/coinlist.js"></script>
+		
+		
+
+	</body>
+
+</html>

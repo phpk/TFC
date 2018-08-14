@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>帮助中心</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css">
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+	</head>
+
+	<body>
+		<div class="gz-header">
+			<div class="gz-header-back" onclick="mui.back()"><i class="iconfont icon-c"></i></div>
+			<div class="gz-header-title" lang>帮助中心</div>
+			<div class="gz-header-right"></div>
+		</div>
+		<div class="gz-main">
+			<div class="gz-help-box">
+				<ul id="help-list"></ul>
+				<script id='help-template' type="text/template">
+					<% for(var i in data){ var item = data[i]; %>
+						<% if(item.id > 20){%>
+							<li id="<%= (item.id)%>"><span><%= (item.title)%></span><i class="iconfont icon-b"></i></li>
+						<% } %>
+					<% } %>
+				</script>
+			</div>
+
+		</div>
+
+		<script src="../static/js/mui.min.js"></script>
+		<script src="lang/help.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="config.js"></script>
+		<script src="js/help.js"></script>
+		
+		
+	</body>
+
+</html>

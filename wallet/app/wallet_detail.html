@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>钱包明细</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css" />
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+		<style>
+			.qr-area {
+				background: #fff;
+				width: 90%;
+				margin: 0 auto;
+				height: 290px;
+				padding-top: 10px;
+				border-radius: 10px;
+			}
+			
+			.qr {
+				width: 250px;
+				height: 250px;
+				margin: 10px auto;
+			}
+			#addrshow{
+				background: none;
+				border:none;
+				padding: 0;
+			}
+			
+		</style>
+	</head>
+
+	<body class="gz-bg">
+		<div class="gz-qianbaoinfo-hed">
+			<img src="../static/image/qianbao_info.jpg" />
+			<div class="gz-header">
+				<div class="gz-header-back"><i class="iconfont icon-c mui-action-back"></i></div>
+				<div class="gz-header-title"><span id="title"></span><span lang>钱包</span></div>
+				<div class="gz-header-right"><i class="iconfont icon-icon-test15 gz-icon" id="refresh" style="color: #fff;"></i></div>
+			</div>
+			<div class="gz-qianbaoinfo-box">
+				<div class="gz-qianbaoinfo-zican">
+					<div class="gz-qianbaoinfo-zican-list">
+						<samp lang>总</samp>
+						<span id="amount">0</span>
+					</div>
+					<div class="gz-qianbaoinfo-zican-list">
+						<samp lang>约</samp>
+						<span id="allmoney">0</span>
+					</div>
+				</div>
+				<div class="gz-qianbaoinfo-addess" id="copyaddr">
+					<!--已做超出省略处理-->
+					<div class="gz-qianbaoinfo-addess-t"><span lang>钱包地址</span>：<button id="addrshow" style="font-size: 0.92rem;"></button></div>
+					<i class="iconfont icon-icon-test12" id="eyeshow"></i>
+				</div>
+			</div>
+		</div>
+		<div class="gz-qianbaoinfo-main">
+			<div class="gz-all-tab">
+				<span class="gz-all-tab-checked" id="qrcode"><samp lang>收款</samp></span>
+				<span id="pay"><samp lang>付款</samp></span>
+				<span id="log"><samp lang>交易详情</samp></span>
+			</div>
+			<div id="qrcodearea">
+				<div class="qr-area">
+					<div class="qr" id="qr"></div>
+				</div>
+			</div>
+			<div id="payarea" style="display: none;">
+				<div class="gz-qianbaoadd-from">
+					<div class="gz-qianbaoadd-inp">
+						<span lang>付款地址</span>
+						<input lang type="text" value="" placeholder="付款地址" id="pay_addr" />
+						<i class="iconfont icon-j" id="qrscan"></i>
+					</div>
+					<div class="gz-qianbaoadd-inp">
+						<span lang>付款金额</span>
+						<input lang type="number" value="0.000" placeholder="付款金额" id="pay_money" />
+					</div>
+					<div class="gz-qianbaoadd-inp">
+						<span lang>交易密码</span>
+						<input lang type="password" value=""  placeholder="请输入8-16位密码" id="jypassword" />
+						<i class="iconfont icon-icon-test12" id="eyepassword"></i>
+					</div>
+
+				</div>
+				<div class="gz-but-box">
+					<div class="gz-but" id="sub" lang>确认</div>
+				</div>
+			</div>
+			<div id="logarea" style="display: none;">
+				<ul id="paylogarea"></ul>
+				<script id='paylog-template' type="text/template">
+
+					<% for(var i in data){ var item = data[i]; %>
+					<li id="<%=(item['hx'])%>" style="height:80px">
+						<svg class="icon copy-hash" aria-hidden="true">
+							<% if(item['type'] == 'IN') {%>
+							<use xlink:href="#icon-icon-test14"></use>
+							<%}else{%>
+							<use xlink:href="#icon-icon-test13"></use>
+							<%}%>
+
+						</svg>
+						<div class="gz-qianbaoinfo-text">
+							<div class="gz-qianbaoinfo-text-l">
+								<!--没做超出省略处理，JS做中间裁剪处理-->
+								<span style="display: block; width: 150px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%=(item['hx'])%></span>
+								<samp><%=(item['showtime'])%></samp>
+								<% if(item['gas']) {%><samp>gas:<%=(item['gas'])%></samp><%}%>
+							</div>
+							<div class="gz-qianbaoinfo-text-r">
+								<% if(item['type'] == 'IN') {%>
+								<span class="gz-in"><%=(item['val'])%></span>
+								<%}else{%>
+								<span class="gz-out">-<%=(item['val'])%></span>
+								<%}%>
+							</div>
+						</div>
+					</li>
+
+					<% } %>
+				</script>
+
+			</div>
+		</div>
+		<script src="config.js"></script>
+		<script src="../static/font/iconfont.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="lang/wallet_detail.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/pages.js"></script>
+		<script src="../static/js/qrcode.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eth.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/eos.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/btc.js"></script>
+		<script src="../static/js/clipboard.min.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/price.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		<script src="js/wallet_detail.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title lang>管理钱包</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/mui.min.css">
+    <link rel="stylesheet" href="../static/css/reset.min.css"/>
+    <link rel="stylesheet" href="../static/font/iconfont.css"/>
+    <link rel="stylesheet" href="../static/css/main.css"/>
+</head>
+
+<body>
+<div class="gz-header">
+    <div class="gz-header-back"><i class="iconfont icon-c mui-action-back" ></i></div>
+    <div class="gz-header-title" lang>管理钱包</div>
+    <div class="gz-header-right"></div>
+</div>
+<div class="gz-main">
+    <div class="gz-me-list">
+        <ul>
+            <li id="import.html">
+                <i class="iconfont icon-l gz-icon"></i>
+                <span lang>导入钱包</span>
+                <i class="iconfont icon-b"></i>
+            </li>
+            <li id="create.html">
+                <i class="iconfont icon-m gz-icon"></i>
+                <span lang>创建钱包</span>
+                <i class="iconfont icon-b"></i>
+            </li>
+            <li id="backup.html">
+                <i class="iconfont icon-n gz-icon"></i>
+                <span lang>备份钱包</span>
+                <i class="iconfont icon-b"></i>
+            </li>
+            <li id="changewallet.html">
+                <i class="iconfont icon-icon-test15 gz-icon"></i>
+                <span lang>切换钱包</span>
+                <i class="iconfont icon-b"></i>
+            </li>
+            <li id="coinlist.html">
+                <i class="iconfont icon-o gz-icon"></i>
+                <span lang>管理币种</span>
+                <i class="iconfont icon-b"></i>
+            </li>
+            <li id="password.html">
+                <i class="iconfont icon-icon-test16 gz-icon"></i>
+                <span lang>钱包密码</span>
+                <i class="iconfont icon-b"></i>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="gz-me-list">
+        <ul>
+            <li id="clear">
+                <i class="iconfont icon-icon-test17 gz-icon"></i>
+                <span lang>清除缓存</span>
+                <i class="iconfont icon-b"></i>
+            </li>
+
+        </ul>
+    </div>
+    <!--div class="gz-me-list">
+        <ul>
+            <li id="changenode.html">
+                <i class="iconfont icon-icon-test17 gz-icon"></i>
+                <span>更换节点</span>
+                <i class="iconfont icon-b"></i>
+            </li>
+
+        </ul>
+    </div-->
+
+
+</div>
+
+<script src="config.js"></script>
+		<script src="../static/font/iconfont.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/pages.js"></script>
+		<script src="../static/js/qrcode.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eth.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/eos.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/btc.js"></script>
+		<script src="../static/js/clipboard.min.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/price.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		
+		
+<script>
+	mui.init();
+	mui.plusReady(function(){
+		mui('ul').on('tap','li', function(){
+		if(this.id == 'clear') {
+			wallet.clear();
+			mui.toast(lang('清除成功！'));
+		}else{
+			mui.openWindow({url : this.id, id : this.id})
+		}
+	});
+	});
+	
+	
+</script>
+<script src="lang/mgrwallet.js"></script>
+</body>
+
+</html>

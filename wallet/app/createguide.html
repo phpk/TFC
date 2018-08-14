@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title lang>首页</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="../static/css/mui.min.css">
+    <link rel="stylesheet" href="../static/css/reset.min.css"/>
+    <link rel="stylesheet" href="../static/font/iconfont.css"/>
+    <link rel="stylesheet" href="../static/css/main.css"/>
+</head>
+
+<body class="gz-bg">
+    <div class="gz-home-logo">
+        <img src="../static/image/homelogo.png"/>
+    </div>
+    <div class="gz-homebut-box">
+        <div class="gz-home-but" id="btn" lang>创建钱包</div>
+    </div>
+<script src="../static/js/mui.min.js"></script>
+<script src="lang/createguide.js"></script>
+<script src="../static/js/common.js"></script>
+
+</body>
+<script>
+	document.getElementById('btn').addEventListener('tap', function(){
+		mui.openWindow({url : 'create.html', id : 'create'});
+	});
+</script>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>转账</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css" />
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+		<link rel="stylesheet" href="../static/css/pop.css" />
+		<style>
+			.gz-i-click{
+				color: #0062CC;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="gz-header">
+			<div class="gz-header-back"><i class="iconfont icon-c mui-action-back"></i></div>
+			<a class="gz-header-title" id="header" href="#topPopover"><span id="title">ETH</span> <font lang>转账</font> <i class="iconfont icon-e"></i></a>
+
+			<div class="gz-header-right"></div>
+		</div>
+		<div id="topPopover" class="mui-popover">
+			<div class="mui-popover-arrow"></div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view" id="list"></ul>
+				</div>
+			</div>
+
+		</div>
+		<script id='tpl' type="text/template">
+			<% for(var i in data){ var item = data[i]; %>
+			<li class="mui-table-view-cell" id="<%=(i)%>">
+				<%=(item.name)%>
+			</li>
+			<% } %>
+		</script>
+		<div class="gz-main">
+
+			<div class="gz-form-box">
+				<ul>
+					<li>
+						<div class="gz-form-lab" lang>余额</div>
+						<div class="gz-form-inp">
+							<input type="text" placeholder="0.00" id="leftmoney" readonly="true"/>
+						</div>
+						<div class="gz-form-additional">
+							<span id="coinname">BTC</span>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+			<div class="gz-form-box">
+				<ul>
+					<li>
+						<div class="gz-form-lab" lang>地址</div>
+						<div class="gz-form-inp">
+							<input type="text" placeholder="请填写目的地址" id="pay_addr" lang />
+
+						</div>
+						<i class="iconfont icon-j" id="qrscan" style="font-size: 3rem;margin: 0.5rem 1rem 0 0;"></i>
+					</li>
+					<li>
+						<div class="gz-form-lab" lang>数量</div>
+						<div class="gz-form-inp">
+							<input type="text" placeholder="请填写转账数量" id="pay_money" lang />
+						</div>
+						<div class="mui-checkbox mui-left">
+							<label lang>全部</label>
+							<input name="checkbox" value="1" type="checkbox" id="allck">
+						</div>
+
+					</li>
+					<li>
+						<div class="gz-form-lab" lang>交易密码</div>
+						<div class="gz-form-inp">
+							<input type="password"  placeholder="请输入8-16位密码" id="jypassword" lang />
+						</div>
+						<i class="iconfont icon-icon-test12 " style="font-size: 2rem;margin: 0.8rem 1rem 0 0;" id="eyepassword"></i>
+
+					</li>
+
+				</ul>
+			</div>
+			<div class="gz-but-box">
+				<div class="gz-but" id="sub" lang>确定转账</div>
+				<!--当不可选时样式-->
+				<!--<div class="gz-but-disabled">确定修改</div>-->
+			</div>
+
+		</div>
+		<script src="config.js"></script>
+		<script src="../static/font/iconfont.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="lang/pay.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eth.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/eos.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/btc.js"></script>
+		<script src="../static/js/clipboard.min.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		
+		
+		<script src="js/pay.js"></script>
+	</body>
+
+</html>

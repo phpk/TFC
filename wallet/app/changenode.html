@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>切换节点</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css">
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+	</head>
+
+	<body>
+		<div class="gz-header">
+			<div class="gz-header-back"><i class="iconfont icon-c mui-action-back"></i></div>
+			<div class="gz-header-title" lang>切换节点</div>
+		</div>
+		<div class="gz-main">
+			<div class="gz-all-tab">
+				<span class="gz-all-tab-checked" id="eth"><samp lang>以太坊</samp></span>
+				<span id="btc"><samp lang>比特币</samp></span>
+				<span id="eos"><samp lang>柚子</samp></span>
+			</div>
+			<div class="gz-qb-list">
+				<ul id="etharea"></ul>
+				<ul id="btcarea" style="display: none;"></ul>
+				<ul id="eosarea" style="display: none;"></ul>
+				<script id='wallet-template' type="text/template">
+					<% for(var i in data){ var item = data[i]; %>
+					<li data-id="<%=(item.address)%>" data-etype="<%=(etype)%>" data-name="<%=(item.name)%>">
+						<div class="gz-mui-radio">
+							<div class="mui-radio">
+								<label></label>
+								<input name="<%=(etype)%>" type="radio" id="<%=(item.address)%>" <%=(item['address']==def ? 'checked' : '')%>>
+							</div>
+						</div>
+						<div class="gz-qb-text">
+							<span id="<%=(item.address)%>name"><%=(item.name)%></span>
+							<samp><%=(item.name)%></samp>
+						</div>
+					</li>
+					<% } %>
+				</script>
+			</div>
+
+			<!--div class="gz-but-box">
+				<div class="gz-but">确定</div>
+			</div-->
+
+		</div>
+		
+		<script src="../static/js/mui.min.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/clipboard.min.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="lang/changenode.js"></script>
+		<script>
+			
+		</script>
+	</body>
+
+</html>

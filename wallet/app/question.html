@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>问题反馈</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css">
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+	</head>
+
+	<body>
+		<div class="gz-header">
+			<div class="gz-header-back" onclick="mui.back()"><i class="iconfont icon-c"></i></div>
+			<div class="gz-header-title" lang>问题反馈</div>
+			<div class="gz-header-right" id='upload' lang>提交</div>
+		</div>
+		<div class="gz-main">
+			<div class="gz-bug-box">
+				<div class="gz-bug-text">
+					<textarea placeholder="请详细描述你的问题和意见..." id="content" lang></textarea>
+				</div>
+				<h3 lang>图片(选填，提供问题截图)</h3>
+				<div class="gz-bug-img">
+					<ul id="sethtml">
+
+						<li id='headImage'><i class="iconfont icon-a"></i></li>
+
+					</ul>
+				</div>
+				<h3 lang>QQ或者邮箱(方便我们联系你)</h3>
+				<div class="gz-bug-inp">
+					<input placeholder="QQ/邮箱" id="contact" lang />
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../static/js/mui.min.js"></script>
+		<script src="config.js"></script>
+		<script src="lang/question.js"></script>
+		<script src="js/jquery-2.1.0.js"></script>
+		<script src="../static/js/common.js"></script>
+		
+		<script src="js/question.js"></script>
+	</body>
+
+</html>

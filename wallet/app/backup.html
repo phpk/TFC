@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>备份1</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css">
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+	</head>
+
+	<body>
+		<div class="gz-header">
+			<div class="gz-header-back"><i class="iconfont icon-c mui-action-back"></i></div>
+			<div class="gz-header-title" lang>备份钱包</div>
+			<div class="gz-header-right"></div>
+		</div>
+		<div class="gz-main">
+			<div class="gz-but-box">
+				<div class="gz-but" id="eth" lang>备份ETH私钥</div>
+				<div class="gz-but-two" id="btc" lang>备份BTC私钥</div>
+				<div class="gz-but-two" id="eos" lang>备份EOS私钥</div>
+			</div>
+		</div>
+		<!--弹窗-->
+		<div class="gz-popup" id="pop" style="display: none;">
+			<div class="gz-popup-box">
+				<div class="gz-popup-hed" lang>请输入钱包密码</div>
+				<div class="gz-popup-body">
+					<input type="password" placeholder="请输入密码" id="pwd" lang />
+				</div>
+				<div class="gz-popup-but">
+					<span id="close1" lang>取消</span>
+					<span id="btn" lang>确定</span>
+				</div>
+			</div>
+		</div>
+		<div class="gz-popup" id="copybox" style="display: none;">
+			<div class="gz-popup-box">
+				<div class="gz-popup-hed" lang>复制密钥</div>
+				<div class="gz-popup-body">
+					<input type="text" readonly="" id="privkeyarea" style="width:100%;font-size:12px;height:24px" />
+				</div>
+				<div class="gz-popup-but">
+					<span id="close2" lang>关闭</span>
+					<span id="copybtn" lang>复制</span>
+				</div>
+			</div>
+		</div>
+
+		<script src="config.js"></script>
+		<script src="../static/font/iconfont.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="lang/backup.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="../static/js/pages.js"></script>
+		<script src="../static/js/qrcode.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eth.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/eos.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/btc.js"></script>
+		<script src="../static/js/clipboard.min.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/price.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		
+		
+		<script>
+			mui.init();
+			var etype;
+			mui('.gz-but-box').on('tap', 'div', function() {
+				etype = this.id;
+				document.getElementById('pop').style.display = '';
+			});
+
+			function closewin() {
+				document.getElementById('pop').style.display = 'none';
+			}
+			document.getElementById('close1').addEventListener('tap', function() {
+				document.getElementById('pop').style.display = 'none';
+			})
+			document.getElementById('close2').addEventListener('tap', function() {
+				document.getElementById('copybox').style.display = 'none';
+			})
+			document.getElementById('btn').addEventListener('tap', function() {
+				var mwallet = wallet.get(etype);
+				if(!mwallet) {
+					mui.alert(lang("还未创建钱包！"));
+					return;
+				}
+				var pwd = document.getElementById('pwd').value;
+				if(!pwd || pwd == '') {
+					mui.toast(lang('密码不能为空！'));
+					return;
+				}
+				if(md5(pwd) != mwallet.passwd) {
+					document.getElementById('pwd').value = '';
+					mui.alert(lang('密码错误！'));
+					return;
+				}
+				document.getElementById('pop').style.display = 'none';
+				document.getElementById('copybox').style.display = '';
+				document.getElementById('privkeyarea').value = mwallet.privkey;
+			})
+			var clipboard = new Clipboard('#copybtn', {
+				// 点击copy按钮，直接通过text直接返回复印的内容
+				text: function() {
+					return document.getElementById('privkeyarea').value;
+				}
+			});
+
+			clipboard.on('success', function(e) {
+				console.log(e);
+				document.getElementById('pwd').value = '';
+				mui.toast(lang('复制成功'));
+			});
+
+			clipboard.on('error', function(e) {
+				console.log(e);
+			});
+		</script>
+
+	</body>
+
+</html>

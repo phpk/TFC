@@ -1,0 +1,27 @@
+var langData = langData || {};
+langData['en'] = {
+	'钱包' : 'Wallet',
+	'总' : 'Total',
+	'约' : 'About',
+	'钱包地址' : 'Address',
+	'收款' : 'Receive',
+	'付款' : 'Send',
+	'交易详情' : 'Details',
+	'付款地址' : 'Address',
+	'付款金额' : 'Amount',
+	'交易密码' : 'password',
+	'请输入8-16位密码' : 'The password',
+	'确认' : 'Confirm',
+	'正在加载...': 'Loading',
+	'没有更多数据了': 'No more',
+	'已复制钱包地址' : 'The wallet address has been copied',
+	'已复制Hash' : 'Replicated the Hash',
+	'付款地址不能为空' : 'Payment address cannot be empty',
+	'不能自己给自己付款！' : 'You can not pay for yourself!',
+	'付款金额不能为空' : 'Payment cannot be made in blank',
+	'付款金额必须为数字' : 'Payment must be made in figures',
+	'额度不足' : 'Lack of credit',
+	'钱包密码输入错误' : 'Wrong wallet password',
+	'支付成功，打包需要3-5分钟！' : 'Payment successful, packaging takes 3-5 minutes!',
+	'支付失败！' : 'Payment failed!'
+}

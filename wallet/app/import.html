@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title lang>导入助记词</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/mui.min.css">
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+	</head>
+
+	<body>
+		<div class="gz-header">
+			<div class="gz-header-back"><i class="iconfont icon-c mui-action-back"></i></div>
+			<div class="gz-header-title" lang>导入钱包</div>
+			<div class="gz-header-right"></div>
+		</div>
+		<div class="gz-main">
+			<div class="gz-all-tab">
+				<span class="gz-all-tab-checked" id="gztabz"><samp lang>导入助记词</samp></span>
+				<span id="gztabm"><samp lang>导入密钥</samp></span>
+			</div>
+			<div class="gz-qianbaoadd-from">
+				<div class="gz-qianbaoadd-inp">
+					<span lang>钱包名称</span>
+					<input type="text" placeholder="易于管理的名称" id="name" lang />
+				</div>
+				<div class="gz-qianbaoadd-text" id="zjcword">
+					<span lang>助记词</span>
+					<textarea placeholder="助记词，按空格分隔" id="word1" lang></textarea>
+				</div>
+				<div class="gz-qianbaoadd-text" id="keyword" style="display: none; ">
+					<span lang>私钥</span>
+					<textarea placeholder="明文私钥" id="word2" lang></textarea>
+				</div>
+				<div class="gz-qianbaoadd-radio">
+					<span lang>钱包类型</span>
+					<div class="gz-qianbaoadd-radio-box">
+						<div class="gz-mui-radio">
+							<div class="mui-radio">
+								<input name="etype" type="radio" value='btc'>
+								<label lang>比特币</label>
+							</div>
+						</div>
+						<div class="gz-mui-radio">
+							<div class="mui-radio">
+								<input name="etype" type="radio" checked value="eth">
+								<label lang>以太坊</label>
+							</div>
+						</div>
+						<div class="gz-mui-radio">
+							<div class="mui-radio">
+								<input name="etype" type="radio" value="eos">
+								<label>EOS</label>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="gz-qianbaoadd-inp">
+					<span lang>钱包密码</span>
+					<input type="password" placeholder="请输入8-16位密码" id="pwd1" lang />
+					<i class="iconfont icon-icon-test12 " id="eye1"></i>
+				</div>
+				<div class="gz-qianbaoadd-inp">
+					<span lang>确认密码</span>
+					<input type="password" placeholder="确认密码" id="pwd2" lang />
+					<i class="iconfont icon-icon-test12" id="eye2"></i>
+				</div>
+
+			</div>
+			<div class="gz-but-box">
+				<div class="gz-but" id="sub" lang>确认导入</div>
+				<!--备用-->
+				<!--<div class="gz-but-disabled ">确定</div>-->
+			</div>
+
+		</div>
+
+		<script src="../static/js/mui.min.js"></script>
+		
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		<script src="lang/import.js"></script>
+		
+		<script src="js/import.js"></script>
+		
+	</body>
+
+</html>

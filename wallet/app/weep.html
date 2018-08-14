@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../static/css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			* {
+	-webkit-user-select: none;
+}
+
+html,
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.mui-bar {
+	/*position: inherit;*/
+}
+
+#bcid {
+	/*background: grey;*/
+	background: rgba(0, 0, 0, 0.8);
+	/*background: red;*/
+	width: 100%;
+    position: absolute;
+    top: 50px;
+    bottom: 80px;
+    text-align: center;
+}
+
+header a,header span {
+	color: black;
+	margin-right: 0;
+	border-width: 50%;
+}
+
+header h4 {
+	color: black;
+	margin: 0;
+	font-weight: normal;
+	line-height: 44px;
+	padding-left: 30px;
+}
+
+.mui-bar.mui-bar-nav {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	background-color: #fff;
+	height: 44px;
+	position: inherit;
+}
+
+.mui-icon-left-nav::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 50px;
+	height: 44px;
+	line-height: 44px;
+	width: 1px;
+	content: '';
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	background-color: #fff;
+}
+
+.mui-table-view-cell:after {
+	background-color: #fff;
+}
+
+
+
+
+			
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar-nav mui-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h4 class="mui-pull-left" lang>扫一扫</h4>
+			<!--span class="mui-icon mui-icon-spinner-cycle mui-spin mui-pull-right" id="turnTheLight"></span-->
+		</header>
+		<div id="bcid">
+			
+		</div>
+	
+		<script src="config.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="lang/weep.js"></script>
+		<script src="../static/js/common.js"></script>
+		
+		<script src="js/weep.js"></script>
+
+	</body>
+
+</html>

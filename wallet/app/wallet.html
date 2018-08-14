@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>钱包</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../static/css/reset.min.css" />
+		<link rel="stylesheet" href="../static/font/iconfont.css" />
+		<link rel="stylesheet" href="../static/css/main.css" />
+	</head>
+
+	<body>
+
+		<div class="gz-bg">
+			<!--div class="gz-banner">
+				<img src="../static/image/banner_temp.jpg" />
+			</div-->
+			<div class="gz-qianbao-box">
+				<em><samp lang>总资产</samp>（<i id="coinnum"></i>）</em>
+				<span id="allmoney"></span>
+			</div>
+			<div class="gz-qianbao-but-box">
+				<div class="gz-qianbao-but" id="qrcode.html">
+					<samp><img src="../static/image/8.png"/></samp>
+					<span lang>收款</span>
+				</div>
+				<div class="gz-qianbao-but" id="pay.html">
+					<samp><img src="../static/image/9.png"/></samp>
+					<span lang>转账</span>
+				</div>
+			</div>
+		</div>
+		<div class="gz-qianbao-list">
+			<h3><span lang>资产列表</span><i class="iconfont icon-a" id="jia"></i><i class="iconfont icon-icon-test15 gz-icon" id="refresh"></i></h3>
+			<ul style="padding-bottom: 20px;" id="list"></ul>
+			<script id='tpl' type="text/template">
+				<% for(var i in data){ var item = data[i]; %>
+				<li id="<%=(i)%>" data-type="<%=(item.ctype)%>">
+					<div class="gz-qianbao-list-img"><img src="../static/coin/<%=(item.logo)%>" /></div>
+					<div class="gz-qianbao-list-text">
+						<span><%=(item.name)%></span>
+						<samp id="<%=(i)%>money"></samp>
+					</div>
+					<!--i class="iconfont icon-b"></i-->
+					<div style="height:35px;line-height: 35px;padding-right:20px;color:#9E9E9E" id="<%=(item.name)%>price"></div>
+				</li>
+				<% } %>
+			</script>
+		</div>
+		<script src="config.js"></script>
+		<script src="../static/js/mui.min.js"></script>
+		<script src="../static/js/md5.min.js"></script>
+		<script src="../static/js/arttmpl.js"></script>
+		<script src="lang/wallet.js"></script>
+		<script src="../static/js/common.js"></script>
+		<script src="../static/js/scrypt.js"></script>
+		<script src="../static/js/ethers.js"></script>
+		<script src="../static/js/eth.js"></script>
+		<script src="../static/js/eosjs-ecc.js"></script>
+		<script src="../static/js/eos.min.js"
+    integrity="sha512-vNyLnOEb7uFmEtVbLnyZQ9/k4zckM2Vu3jJOKq6XfWEVZG0yKcjDExVN4EQ7e3F+rePWRncMolI2xFi/3qo62A=="
+    crossorigin="anonymous"></script>
+		<script src="../static/js/eos.js"></script>
+		<script src="../static/js/bitcoin.js"></script>
+		<script src="../static/js/btc.js"></script>
+		<script src="../static/js/clipboard.min.js"></script>
+		<script src="../static/coin/coinlist.js"></script>
+		<script src="../static/js/price.js"></script>
+		<script src="../static/js/wallet.js"></script>
+		<script src="js/wallet.js"></script>
+		
+	</body>
+
+</html>
